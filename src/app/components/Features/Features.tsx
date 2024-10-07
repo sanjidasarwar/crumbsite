@@ -3,7 +3,7 @@ import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const itemVariants = (delay) => ({
+const itemVariants = (delay: number) => ({
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
