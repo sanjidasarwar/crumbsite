@@ -7,7 +7,7 @@ const Tabs = () => {
   const [category, setCategory] = useState("1");
   const [activeButton, setActiveButton] = useState("1");
 
-  const handleButtonClick = (buttonId) => {
+  const handleButtonClick = (buttonId: string) => {
     setActiveButton(buttonId);
     setCategory(buttonId); // Set category based on button clicked
   };
