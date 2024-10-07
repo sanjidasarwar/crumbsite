@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
-import { MenuIcon } from "lucide-react";
-import { X } from "lucide-react";
+import { X, MenuIcon } from "lucide-react";
 import Navigation from "./_components/mobile-menu";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
   // Use state to handle dropdown open/close
@@ -238,20 +238,30 @@ const Header: React.FC = () => {
               onClick={handleToggleMobileMenu}
             >
               <span className="cft5d">Menu</span>
-              {showMobileMenu ? (
-                <X className="h-8 w-8 dark:text-white text-black" />
-              ) : (
-                <MenuIcon className="h-8 w-8 dark:text-white text-black" />
-              )}
+              <div className="perspective-1000">
+                <motion.div
+                  initial={{ rotateX: 0 }} // Initial state of rotation
+                  animate={{ rotateX: showMobileMenu ? 180 : 0 }}
+                  className="preserve-3d transform transition-transform duration-300 ease-in-out"
+                >
+                  {showMobileMenu ? (
+                    <X className="h-8 w-8 dark:text-white text-black" />
+                  ) : (
+                    <MenuIcon className="h-8 w-8 dark:text-white text-black" />
+                  )}
+                </motion.div>
+              </div>
             </button>
           </div>
         </div>
         <div
-          className={` ${
+          className={`cdmud ceikc cxcxv cvbap cxslo c2k38 c6zr7 cp8ye cy740 cs8sl cvtns cti3h cg6td ${
             showMobileMenu ? "block" : "hidden"
-          } mt-2 w-[70vw] h-screen top-0 z-20 left-0 absolute`}
+          }`}
         >
-          <Navigation isOpen={showMobileMenu} setIsOpen={setShowMobileMenu} />
+          <div className="c1t6c cb7tb chur8">
+            <Navigation isOpen={showMobileMenu} setIsOpen={setShowMobileMenu} />
+          </div>
         </div>
       </div>
     </header>

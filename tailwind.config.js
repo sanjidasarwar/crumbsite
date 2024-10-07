@@ -19,7 +19,25 @@ module.exports = {
         customGrey: "rgb(212 212 216)",
         grayNew: "rgb(46, 46, 51)",
       },
+      perspective: {
+        1000: "1000px",
+      },
+      transformStyle: {
+        "preserve-3d": "preserve-3d",
+      },
     },
-    plugins: [],
+    plugins: [
+      function ({ addUtilities }) {
+        const newUtilities = {
+          ".perspective-1000": {
+            perspective: "1000px",
+          },
+          ".preserve-3d": {
+            transformStyle: "preserve-3d",
+          },
+        };
+        addUtilities(newUtilities);
+      },
+    ],
   },
 };
