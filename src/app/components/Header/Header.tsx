@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="cgk3d cs8sl clzfl ">
+    <header className="cgk3d cs8sl clzfl">
       <div className="czd2q c92f3 cmhb9 c1plj relative">
         <div className="ctiy6 cxdxt cnc7y cevvc">
           {/* Site branding */}
