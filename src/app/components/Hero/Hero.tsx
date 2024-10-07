@@ -40,7 +40,7 @@ const Hero = () => {
       },
     },
   });
-  const itemVariants2 = (delay) => ({
+  const itemVariants2 = (delay: number) => ({
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
