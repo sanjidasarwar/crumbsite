@@ -81,7 +81,7 @@ const PricingTables = () => {
                     y: 0,
                     transition: {
                       duration: 0.5,
-                      delay: i * 0.15, // Delay increases by 0.15s for each item
+                      delay: i * 0.15,
                     },
                   },
                 }}

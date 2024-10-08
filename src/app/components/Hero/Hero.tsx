@@ -5,8 +5,6 @@ import Link from "next/link";
 import { Play } from "lucide-react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { div } from "framer-motion/client";
-import Header from "../Header/Header";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -57,9 +55,8 @@ const Hero = () => {
   const [modalExpanded, setModalExpanded] = useState(false);
 
   return (
-    <div>
-      <Header />
-      <section id="hero" ref={ref}>
+    <>
+      <section id="hero" ref={ref} className="relative z-10">
         <motion.div
           className="czd2q c92f3 cmhb9 c1plj"
           initial="hidden"
@@ -218,50 +215,50 @@ const Hero = () => {
                   </a>
                 </div>
               </motion.div>
-              {/* Modal */}
-              {modalExpanded && (
-                <div
-                  className="fixed inset-0 z-[10000] bg-black bg-opacity-80 modal"
-                  onClick={() => setModalExpanded(false)}
-                >
-                  <div className=" w-[90%] h-auto max-w-[90%] mx-auto">
-                    {/* <button className="absolute top-2 right-2 text-white hover:text-gray-400">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      ></path>
-                    </svg>
-                  </button> */}
-                    <div className="relative w-full h-full">
-                      <video
-                        className="w-[90%] h-auto mx-auto object-cover"
-                        width="1920"
-                        height="1080"
-                        loop
-                        controls
-                        autoPlay
-                      >
-                        <source src="/videos/video.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </motion.div>
       </section>
-    </div>
+      {/* Modal */}
+      {modalExpanded && (
+        <div
+          className="fixed inset-0 z-[10000] flex items-center justify-center bg-black bg-opacity-80 modal"
+          onClick={() => setModalExpanded(false)}
+        >
+          <div className=" w-[90%] h-auto max-w-[90%] mx-auto">
+            {/* <button className="absolute top-2 right-2 text-white hover:text-gray-400">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button> */}
+            <div className="relative w-full h-full">
+              <video
+                className="w-[90%] h-auto mx-auto object-cover"
+                width="1920"
+                height="1080"
+                loop
+                controls
+                autoPlay
+              >
+                <source src="/videos/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
