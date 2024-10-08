@@ -7,6 +7,8 @@ const PricingTables = () => {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
+  console.log(inView);
+
   // Define animation variants
   // const variants = {
   //   hidden: { opacity: 0, y: 20 },
@@ -26,7 +28,7 @@ const PricingTables = () => {
           observer.disconnect(); // Stop observing after the component is in view
         }
       },
-      { threshold: 0.3 } // Trigger when at least 10% of the component is in view
+      { threshold: 0.1 } // Lower threshold for small screens
     );
 
     if (ref.current) {
@@ -69,8 +71,8 @@ const PricingTables = () => {
                 key={i}
                 className={
                   i === 0
-                    ? "c01sm co2a3 cj3dx c54sb cxgs4 c6zr7 c1zcx cszwl cnc7y cdt9h aos-init aos-animate"
-                    : "cj3dx c54sb c6zr7 c1zcx cszwl cnc7y cdt9h aos-init aos-animate"
+                    ? "c01sm co2a3 cj3dx c54sb cxgs4 c6zr7 c1zcx cszwl cnc7y cdt9h"
+                    : "cj3dx c54sb c6zr7 c1zcx cszwl cnc7y cdt9h"
                 }
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
