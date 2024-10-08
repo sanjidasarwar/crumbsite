@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import { X, MenuIcon } from "lucide-react";
 import Navigation from "./_components/mobile-menu";
@@ -11,6 +11,10 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useTheme(); // Get current theme and function to set the theme
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  // Ref to store the mobile menu div
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
   // Function to toggle the theme
   const toggleTheme = () => {
     console.log(theme);
@@ -19,6 +23,28 @@ const Header: React.FC = () => {
   const handleToggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setShowMobileMenu(false);
+      }
+    };
+
+    if (showMobileMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showMobileMenu]);
 
   return (
     <header className="cgk3d cs8sl clzfl">
@@ -255,6 +281,7 @@ const Header: React.FC = () => {
           </div>
         </div>
         <div
+          ref={mobileMenuRef}
           className={`cdmud ceikc cxcxv cvbap cxslo c2k38 c6zr7 cp8ye cy740 cs8sl cvtns cti3h cg6td ${
             showMobileMenu ? "block" : "hidden"
           }`}
