@@ -28,7 +28,10 @@ const PricingTables = () => {
           observer.disconnect(); // Stop observing after the component is in view
         }
       },
-      { threshold: 0.1 } // Lower threshold for small screens
+      {
+        threshold: 0.3, // Adjust to 30% visibility before triggering
+        rootMargin: "0px 0px -50px 0px", // Ensure it triggers slightly before full visibility
+      }
     );
 
     if (ref.current) {
@@ -43,11 +46,7 @@ const PricingTables = () => {
   }, []);
 
   return (
-    <section
-      id="pricing-tables"
-      className="cq8p6 co2a3 cutri czjaw cnqgv"
-      ref={ref}
-    >
+    <section id="pricing-tables" className="cq8p6 co2a3 cutri czjaw cnqgv">
       <div
         className="cey85 c7l4p cn0dv c8bh4 cj65g c3j32 cgk3d c2ysc cfrwd"
         aria-hidden="true"
@@ -64,7 +63,10 @@ const PricingTables = () => {
             </p>
           </div>
 
-          <div className="clyfp cdxx5 crfqu c04nn cgv10 cn6x8 c3t8k cmhb9 cbv7r c74as">
+          <div
+            className="clyfp cdxx5 crfqu c04nn cgv10 cn6x8 c3t8k cmhb9 cbv7r c74as"
+            ref={ref}
+          >
             {/* Pricing tables with animations */}
             {[0, 1, 2].map((i) => (
               <motion.div
