@@ -10,7 +10,7 @@ import "swiper/css/effect-coverflow";
 
 const Carousel = () => {
   const [swiper, setSwiper] = useState<any>(null);
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number>(1);
   const totalSlides = 5;
 
   const handleSlideChange = (swiper: any) => {
@@ -39,6 +39,7 @@ const Carousel = () => {
           centeredSlides
           loop={true}
           pagination={{ clickable: true }}
+          initialSlide={1}
           onSwiper={(swiperInstance) => setSwiper(swiperInstance)}
           onSlideChange={handleSlideChange}
           breakpoints={{
