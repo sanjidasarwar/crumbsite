@@ -47,7 +47,7 @@ const Stats = () => {
   ];
 
   return (
-    <section id="stats" ref={ref}>
+    <section id="stats" ref={ref} className="czjaw">
       {/* Background gradient (light version only) */}
       <div
         className="cey85 clgvu chf91 cdy81 cgk3d c35ck chb9f c2s69 cp8ye c02j9 c4shy"
