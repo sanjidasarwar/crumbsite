@@ -20,7 +20,7 @@ const Features = () => {
   const isInView = useInView(ref, { once: true }); // Trigger animation once
 
   return (
-    <section id="features" ref={ref} className="">
+    <section id="features" className="">
       <div className="czd2q c92f3 cmhb9 c1plj">
         <div className="cq8p6 cvde3 c1xxg cnqgv cxbax">
           {/*-- Section header --*/}
@@ -185,6 +185,7 @@ const Features = () => {
               </svg>
             </motion.a>
           </div>
+          <div ref={ref}></div>
         </div>
       </div>
     </section>
