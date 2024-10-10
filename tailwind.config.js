@@ -18,6 +18,9 @@ module.exports = {
         customTeal: "rgb(79,209,197)",
         customGrey: "rgb(212 212 216)",
         grayNew: "rgb(46, 46, 51)",
+        purple: {
+          500: "rgb(159 122 234)",
+        },
       },
       perspective: {
         1000: "1000px",

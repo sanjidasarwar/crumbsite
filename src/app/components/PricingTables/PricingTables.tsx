@@ -146,20 +146,27 @@ const PricingTables = () => {
                 All plans include:
               </div>
               <ul className="cn4vl c6xwf c2h4q">
-                {["Unlimited domains", "24/7 support", "One-click backups"].map(
-                  (feature) => (
-                    <li key={feature} className="cxdxt csrqa cnc7y">
-                      <svg
-                        className="text-teal-500 c4u31 c2npy cfc20 c39kt cwc3u"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  )
-                )}
+                {[
+                  "Unlimited domains",
+                  "Unlimited web pages",
+                  "Conversion analytics",
+                  "A/B testing",
+                  "Exclusive channels",
+                  "Free resources",
+                  "Landing page builder",
+                  "Smart forms and reports",
+                ].map((feature) => (
+                  <li key={feature} className="cxdxt csrqa cnc7y">
+                    <svg
+                      className="text-teal-500 c4u31 c2npy cfc20 c39kt cwc3u"
+                      viewBox="0 0 12 12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
