@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,6 +11,16 @@ const Carousel = () => {
   const [swiper, setSwiper] = useState<any>(null);
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const totalSlides = 5;
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Or a loader/placeholder until the client renders
+  }
 
   const handleSlideChange = (swiper: any) => {
     const currentIndex = swiper.realIndex;
@@ -35,7 +44,7 @@ const Carousel = () => {
         </div>
 
         <Swiper
-          spaceBetween={10} // Adjust this value to control the space between slides
+          spaceBetween={24} // Adjust this value to control the space between slides
           centeredSlides
           loop={true}
           pagination={{ clickable: true }}
@@ -47,7 +56,7 @@ const Carousel = () => {
               slidesPerView: 1, // 1 slide for small devices
             },
             768: {
-              slidesPerView: 2.3, // 2.3 slides for medium devices and up
+              slidesPerView: 2.56, // 2.3 slides for medium devices and up
             },
           }}
           className="swiper-container"
@@ -56,9 +65,9 @@ const Carousel = () => {
           {[...Array(totalSlides)].map((_, index) => (
             <SwiperSlide
               key={index}
-              className="swiper-slide"
+              className="swiper-slide c4xyx"
               style={{
-                opacity: index === activeIndex ? 1 : 0.5,
+                opacity: index === activeIndex ? 1 : 0.32,
                 transition: "transform 0.3s, opacity 0.3s",
               }}
             >
@@ -67,8 +76,8 @@ const Carousel = () => {
                   index + 1
                 }.jpg`}
                 alt={`Carousel item 0${index + 1}`}
-                className="carousel-img"
-                style={{ width: "100%", height: "full" }}
+                className="c1qic cjb2b"
+                style={{ width: "540px", height: "auto" }}
               />
               <div className="mt-2 c1qic ccrtt cjb2b cgk3d c54sb c2ysc cnc7y">
                 <div
