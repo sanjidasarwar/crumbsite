@@ -21,6 +21,12 @@ module.exports = {
         purple: {
           500: "rgb(159 122 234)",
         },
+        gray: {
+          600: "rgb(82 82 90)",
+        },
+        teal: {
+          500: "rgb(58 186 180)",
+        },
       },
       perspective: {
         1000: "1000px",

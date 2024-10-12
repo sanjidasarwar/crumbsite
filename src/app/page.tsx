@@ -19,7 +19,7 @@ export default function Home() {
       <main>
         <div className="overflow-hidden">
           <Header />
-          <PageIllustration />
+          {/* <PageIllustration />
           <Hero />
           <Stats />
           <Carousel />
@@ -28,10 +28,10 @@ export default function Home() {
           <PricingTables />
           <Testimonials />
           <Features />
-          <Cta />
+          <Cta /> */}
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
