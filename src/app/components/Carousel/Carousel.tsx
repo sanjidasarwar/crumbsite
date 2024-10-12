@@ -18,10 +18,6 @@ const Carousel = () => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) {
-    return null; // Or a loader/placeholder until the client renders
-  }
-
   const handleSlideChange = (swiper: any) => {
     const currentIndex = swiper.realIndex;
     setActiveIndex(currentIndex);
@@ -42,74 +38,75 @@ const Carousel = () => {
             </p>
           </div>
         </div>
-
-        <Swiper
-          spaceBetween={24} // Adjust this value to control the space between slides
-          centeredSlides
-          loop={true}
-          pagination={{ clickable: true }}
-          initialSlide={1}
-          onSwiper={(swiperInstance) => setSwiper(swiperInstance)}
-          onSlideChange={handleSlideChange}
-          breakpoints={{
-            640: {
-              slidesPerView: 1, // 1 slide for small devices
-            },
-            768: {
-              slidesPerView: 2.56, // 2.3 slides for medium devices and up
-            },
-          }}
-          className="swiper-container"
-        >
-          {/* Carousel Items */}
-          {[...Array(totalSlides)].map((_, index) => (
-            <SwiperSlide
-              key={index}
-              className="swiper-slide c4xyx"
-              style={{
-                opacity: index === activeIndex ? 1 : 0.32,
-                transition: "transform 0.3s, opacity 0.3s",
-              }}
-            >
-              <img
-                src={`https://preview.cruip.com/appy/images/carousel-item-0${
-                  index + 1
-                }.jpg`}
-                alt={`Carousel item 0${index + 1}`}
-                className="c1qic cjb2b"
-                style={{ width: "540px", height: "auto" }}
-              />
-              <div className="mt-2 c1qic ccrtt cjb2b cgk3d c54sb c2ysc cnc7y">
-                <div
-                  className="cnc7y c2h4q"
-                  style={{
-                    opacity: index === activeIndex ? 1 : 0,
-                  }}
-                >
-                  <a
-                    className="text-white bg-teal-500 cvy08 czak8 c6kb8 cmhb9 c9xc1"
-                    href="#0"
+        {isClient && (
+          <Swiper
+            spaceBetween={24} // Adjust this value to control the space between slides
+            centeredSlides
+            loop={true}
+            pagination={{ clickable: true }}
+            initialSlide={1}
+            onSwiper={(swiperInstance) => setSwiper(swiperInstance)}
+            onSlideChange={handleSlideChange}
+            breakpoints={{
+              640: {
+                slidesPerView: 1, // 1 slide for small devices
+              },
+              768: {
+                slidesPerView: 2.56, // 2.3 slides for medium devices and up
+              },
+            }}
+            className="swiper-container"
+          >
+            {/* Carousel Items */}
+            {[...Array(totalSlides)].map((_, index) => (
+              <SwiperSlide
+                key={index}
+                className="swiper-slide c4xyx"
+                style={{
+                  opacity: index === activeIndex ? 1 : 0.32,
+                  transition: "transform 0.3s, opacity 0.3s",
+                }}
+              >
+                <img
+                  src={`https://preview.cruip.com/appy/images/carousel-item-0${
+                    index + 1
+                  }.jpg`}
+                  alt={`Carousel item 0${index + 1}`}
+                  className="c1qic cjb2b"
+                  style={{ width: "540px", height: "auto" }}
+                />
+                <div className="mt-2 c1qic ccrtt cjb2b cgk3d c54sb c2ysc cnc7y">
+                  <div
+                    className="cnc7y c2h4q"
+                    style={{
+                      opacity: index === activeIndex ? 1 : 0,
+                    }}
                   >
-                    Learn more
-                  </a>
-                </div>
-                <div
-                  className="cgk3d c35ck c2s69 cdt9h"
-                  style={{
-                    opacity: index === activeIndex ? 1 : 0,
-                  }}
-                >
-                  <a
-                    className="text-white crwpf cbnia cpz4m clq5w cutri c5ymx cf4hw ccb29 ceo83 cqmyn c5mw1 ci4w1"
-                    href="#0"
+                    <a
+                      className="text-white bg-teal-500 cvy08 czak8 c6kb8 cmhb9 c9xc1"
+                      href="#0"
+                    >
+                      Learn more
+                    </a>
+                  </div>
+                  <div
+                    className="cgk3d c35ck c2s69 cdt9h"
+                    style={{
+                      opacity: index === activeIndex ? 1 : 0,
+                    }}
                   >
-                    Creative Services
-                  </a>
+                    <a
+                      className="text-white crwpf cbnia cpz4m clq5w cutri c5ymx cf4hw ccb29 ceo83 cqmyn c5mw1 ci4w1"
+                      href="#0"
+                    >
+                      Creative Services
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
 
       {/* Navigation buttons */}
