@@ -66,7 +66,7 @@ const Hero = () => {
           <div className="c1r3i c8lmj cew09 c09hn">
             <div className="ckv2s cxdxt co6hs c8zhu chdqp">
               <motion.div
-                className="cpo9b c2igy c7z56 c5ymx c4u1v cy5hl pb-10"
+                className="cpo9b c2igy c7z56 c5ymx c4u1v cy5hl"
                 variants={containerVariants}
               >
                 <motion.h1

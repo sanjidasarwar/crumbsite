@@ -18,10 +18,10 @@ export default function Home() {
     <div>
       <main>
         <div className="overflow-hidden">
-          <Header />
-          {/* <PageIllustration />
+          {/* <Header /> */}
+          <PageIllustration />
           <Hero />
-          <Stats />
+          {/* <Stats />
           <Carousel />
           <Tabs />
           <Process />
