@@ -94,6 +94,7 @@ const Process = () => {
                   width="290"
                   height="624"
                   alt="App screen 02"
+                  style={{ maxWidth: "84.33%" }}
                 />
                 <img
                   className="cey85 cvjv9 czjaw cmhb9 cb1y1"
@@ -127,6 +128,7 @@ const Process = () => {
                   width="290"
                   height="624"
                   alt="App screen 03"
+                  style={{ maxWidth: "84.33%" }}
                 />
                 <img
                   className="cey85 cvjv9 czjaw cmhb9 cb1y1"
@@ -149,6 +151,7 @@ const Process = () => {
                   width="290"
                   height="624"
                   alt="App screen 04"
+                  style={{ maxWidth: "84.33%" }}
                 />
                 <img
                   className="cey85 cvjv9 czjaw cmhb9 cb1y1"
