@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import { Autoplay } from "swiper";
 
 const Carousel = () => {
   const [swiper, setSwiper] = useState<any>(null);
@@ -45,6 +46,7 @@ const Carousel = () => {
             loop={true}
             pagination={{ clickable: true }}
             initialSlide={1}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             onSwiper={(swiperInstance) => setSwiper(swiperInstance)}
             onSlideChange={handleSlideChange}
             breakpoints={{
@@ -56,6 +58,7 @@ const Carousel = () => {
               },
             }}
             className="swiper-container"
+            modules={[Autoplay]}
           >
             {/* Carousel Items */}
             {[...Array(totalSlides)].map((_, index) => (
