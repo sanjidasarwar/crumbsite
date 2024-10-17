@@ -47,6 +47,7 @@ const Tabs = () => {
                     : "c6zr7 cco8t cj3dx cocu3"
                 }`}
                 onClick={() => handleButtonClick("1")}
+                style={{ letterSpacing: "normal" }}
               >
                 <svg
                   className="c2npy cui34 ckyke cca3l"
@@ -80,6 +81,7 @@ const Tabs = () => {
                     : "text-gray-600 dark:text-[rgb(212 212 216)] c6zr7 cco8t cj3dx cocu3"
                 }`}
                 onClick={() => handleButtonClick("2")}
+                style={{ letterSpacing: "normal" }}
               >
                 <svg
                   className="c2npy cui34 ckyke cca3l"
@@ -113,6 +115,7 @@ const Tabs = () => {
                     : "text-gray-600 dark:text-[rgb(212 212 216)] c6zr7 cco8t cj3dx cocu3"
                 }`}
                 onClick={() => handleButtonClick("3")}
+                style={{ letterSpacing: "normal" }}
               >
                 <svg
                   className="c2npy cui34 ckyke cca3l"
@@ -146,6 +149,7 @@ const Tabs = () => {
                     : "text-gray-600 dark:text-[rgb(212 212 216)] c6zr7 cco8t cj3dx cocu3"
                 }`}
                 onClick={() => handleButtonClick("4")}
+                style={{ letterSpacing: "normal" }}
               >
                 <svg
                   className="c2npy cui34 ckyke cca3l"
@@ -179,6 +183,7 @@ const Tabs = () => {
                     : "text-gray-600 dark:text-[rgb(212 212 216)] c6zr7 cco8t cj3dx cocu3"
                 }`}
                 onClick={() => handleButtonClick("5")}
+                style={{ letterSpacing: "normal" }}
               >
                 <svg
                   className="c2npy cui34 ckyke cca3l"

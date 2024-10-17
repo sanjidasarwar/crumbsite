@@ -90,6 +90,7 @@ const Hero = () => {
                       className="c3mdo cltj3 cog1o cs8sl csrqa"
                       placeholder="Phone number"
                       aria-label="Phone number"
+                      style={{ letterSpacing: "normal" }}
                     />
                     <a
                       className="text-white bg-teal-500 cvy08 c2npy ctr9b"
