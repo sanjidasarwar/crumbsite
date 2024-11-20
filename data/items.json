@@ -1,0 +1,27 @@
+[
+    {
+       "id": 1,
+       "src" : "https://preview.cruip.com/appy/images/carousel-item-01.jpg",
+       "alt" : "Carousel item 01"
+    },
+    {
+       "id": 2,
+       "src" : "https://preview.cruip.com/appy/images/carousel-item-02.jpg",
+       "alt" : "Carousel item 02"
+    },
+    {
+       "id": 3,
+       "src" : "https://preview.cruip.com/appy/images/carousel-item-03.jpg",
+       "alt" : "Carousel item 03"
+    },
+    {
+       "id": 4,
+       "src" : "https://preview.cruip.com/appy/images/carousel-item-04.jpg",
+       "alt" : "Carousel item 04"
+    },
+    {
+       "id": 5,
+       "src" : "https://preview.cruip.com/appy/images/carousel-item-05.jpg",
+       "alt" : "Carousel item 05"
+    }
+]

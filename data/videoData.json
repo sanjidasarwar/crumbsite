@@ -1,0 +1,34 @@
+
+[
+    {
+      "id": "1",
+      "title": "Using index pages",
+      "duration": "2 Min",
+      "src": "https://preview.cruip.com/appy/images/video-thumb.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Working with content",
+      "duration": "4 Min",
+      "src": "https://preview.cruip.com/appy/images/video-thumb.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Using cover pages",
+      "duration": "7 Min",
+      "src": "https://preview.cruip.com/appy/images/video-thumb.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Intro to the style model",
+      "duration": "9 Min",
+      "src": "https://preview.cruip.com/appy/images/video-thumb.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Exploring collections",
+      "duration": "12 Min",
+      "src": "https://preview.cruip.com/appy/images/video-thumb.jpg"
+    }
+  ]
+  

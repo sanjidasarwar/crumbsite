@@ -1,8 +1,9 @@
-"use client";
-
 import React, { useState } from "react";
+import processImageData from "../../../../data/processImageData.json";
 
 const Process = () => {
+  const items = processImageData;
+
   return (
     <section id="process" className="czjaw">
       <div className="czd2q c92f3 cmhb9 c1plj">
@@ -72,97 +73,136 @@ const Process = () => {
 
           {/*-- Items --*/}
           <div className="c63cx csd7z cf6cx cn6x8 cmjh8 c2k38 cmhb9 crcpd c74as">
-            <div className="cxdxt czjaw c54sb cnc7y">
-              <div
-                aria-hidden="true"
-                className="c6z3b cp2ws c1qo9 ckm3h cppwx ckfkh c3f8f cs90m cgk3d chb9f cfrwd c2osd"
-                style={{
-                  width: "calc(100% - 48px)",
-                  left: "calc(50% + 48px)",
-                  top: "24px",
-                }}
-              >
-                <div className="cqy23 cs0c2 c737q cgk3d cnqgv c2ysc"></div>
+            {items.map((item, index) => (
+              <div key={item.id} className="cxdxt czjaw c54sb cnc7y">
+                {index < items.length && (
+                  <div
+                    aria-hidden="true"
+                    className="c6z3b cp2ws c1qo9 ckm3h cppwx ckfkh c3f8f cs90m cgk3d chb9f cfrwd c2osd"
+                    style={{
+                      width: "calc(100% - 48px)",
+                      left: "calc(50% + 48px)",
+                      top: "24px",
+                    }}
+                  >
+                    <div className="cqy23 cs0c2 c737q cgk3d cnqgv c2ysc"></div>
+                  </div>
+                )}
+
+                <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
+                  {item.label}
+                </div>
+                <div className="cw3my cxdxt czak8 czjaw">
+                  <img
+                    className="cgk3d"
+                    src={item.mainImgSrc}
+                    width="290"
+                    height="624"
+                    alt={item.altTextMain}
+                    style={{ maxWidth: "84.33%" }}
+                  />
+                  <img
+                    className="cey85 cvjv9 czjaw cmhb9 cb1y1"
+                    src={item.iphoneImgSrc}
+                    width="344"
+                    height="674"
+                    alt={item.altTextIphone}
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
-              <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
-                1
-              </div>
-              <div className="cw3my cxdxt czak8 czjaw">
-                <img
-                  className="cgk3d"
-                  src="https://preview.cruip.com/appy/images/mockup-image-02.jpg"
-                  width="290"
-                  height="624"
-                  alt="App screen 02"
-                  style={{ maxWidth: "84.33%" }}
-                />
-                <img
-                  className="cey85 cvjv9 czjaw cmhb9 cb1y1"
-                  src="https://preview.cruip.com/appy/images/iphone-mockup.png"
-                  width="344"
-                  height="674"
-                  alt="iPhone mockup"
-                  aria-hidden="true"
-                />
-              </div>
-            </div>
-            <div className="cxdxt czjaw c54sb cnc7y">
-              <div
-                aria-hidden="true"
-                className="c6z3b cp2ws c1qo9 ckm3h cppwx ckfkh c3f8f cs90m cgk3d chb9f cfrwd c2osd"
-                style={{
-                  width: "calc(100% - 48px)",
-                  left: "calc(50% + 48px)",
-                  top: "24px",
-                }}
-              >
-                <div className="cqy23 cs0c2 c737q cgk3d cnqgv c2ysc"></div>
-              </div>
-              <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
-                2
-              </div>
-              <div className="cw3my cxdxt czak8 czjaw">
-                <img
-                  className="cgk3d"
-                  src="https://preview.cruip.com/appy/images/mockup-image-03.jpg"
-                  width="290"
-                  height="624"
-                  alt="App screen 03"
-                  style={{ maxWidth: "84.33%" }}
-                />
-                <img
-                  className="cey85 cvjv9 czjaw cmhb9 cb1y1"
-                  src="https://preview.cruip.com/appy/images/iphone-mockup.png"
-                  width="344"
-                  height="674"
-                  alt="iPhone mockup"
-                  aria-hidden="true"
-                />
-              </div>
-            </div>
-            <div className="cxdxt czjaw c54sb cnc7y">
-              <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
-                3
-              </div>
-              <div className="cw3my cxdxt czak8 czjaw">
-                <img
-                  className="cgk3d"
-                  src="https://preview.cruip.com/appy/images/mockup-image-04.jpg"
-                  width="290"
-                  height="624"
-                  alt="App screen 04"
-                  style={{ maxWidth: "84.33%" }}
-                />
-                <img
-                  className="cey85 cvjv9 czjaw cmhb9 cb1y1"
-                  src="https://preview.cruip.com/appy/images/iphone-mockup.png"
-                  width="344"
-                  height="674"
-                  alt="iPhone mockup"
-                  aria-hidden="true"
-                />
-              </div>
-            </div>
+            ))}
+            {/* // <div className="cxdxt czjaw c54sb cnc7y">
+            //   <div
+            //     aria-hidden="true"
+            //     className="c6z3b cp2ws c1qo9 ckm3h cppwx ckfkh c3f8f cs90m cgk3d chb9f cfrwd c2osd"
+            //     style={{
+            //       width: "calc(100% - 48px)",
+            //       left: "calc(50% + 48px)",
+            //       top: "24px",
+            //     }}
+            //   >
+            //     <div className="cqy23 cs0c2 c737q cgk3d cnqgv c2ysc"></div>
+            //   </div>
+            //   <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
+            //     1
+            //   </div>
+            //   <div className="cw3my cxdxt czak8 czjaw">
+            //     <img
+            //       className="cgk3d"
+            //       src="https://preview.cruip.com/appy/images/mockup-image-02.jpg"
+            //       width="290"
+            //       height="624"
+            //       alt="App screen 02"
+            //       style={{ maxWidth: "84.33%" }}
+            //     />
+            //     <img
+            //       className="cey85 cvjv9 czjaw cmhb9 cb1y1"
+            //       src="https://preview.cruip.com/appy/images/iphone-mockup.png"
+            //       width="344"
+            //       height="674"
+            //       alt="iPhone mockup"
+            //       aria-hidden="true"
+            //     />
+            //   </div>
+            // </div>
+            // <div className="cxdxt czjaw c54sb cnc7y">
+            //   <div
+            //     aria-hidden="true"
+            //     className="c6z3b cp2ws c1qo9 ckm3h cppwx ckfkh c3f8f cs90m cgk3d chb9f cfrwd c2osd"
+            //     style={{
+            //       width: "calc(100% - 48px)",
+            //       left: "calc(50% + 48px)",
+            //       top: "24px",
+            //     }}
+            //   >
+            //     <div className="cqy23 cs0c2 c737q cgk3d cnqgv c2ysc"></div>
+            //   </div>
+            //   <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
+            //     2
+            //   </div>
+            //   <div className="cw3my cxdxt czak8 czjaw">
+            //     <img
+            //       className="cgk3d"
+            //       src="https://preview.cruip.com/appy/images/mockup-image-03.jpg"
+            //       width="290"
+            //       height="624"
+            //       alt="App screen 03"
+            //       style={{ maxWidth: "84.33%" }}
+            //     />
+            //     <img
+            //       className="cey85 cvjv9 czjaw cmhb9 cb1y1"
+            //       src="https://preview.cruip.com/appy/images/iphone-mockup.png"
+            //       width="344"
+            //       height="674"
+            //       alt="iPhone mockup"
+            //       aria-hidden="true"
+            //     />
+            //   </div>
+            // </div>
+            // <div className="cxdxt czjaw c54sb cnc7y">
+            //   <div className="text-white cidpy cv8tj ckzxk cw3my cxdxt cpz4m cmxal cf4hw c7tc4 cy5hl cnc7y cvo8b cfank">
+            //     3
+            //   </div>
+            //   <div className="cw3my cxdxt czak8 czjaw">
+            //     <img
+            //       className="cgk3d"
+            //       src="https://preview.cruip.com/appy/images/mockup-image-04.jpg"
+            //       width="290"
+            //       height="624"
+            //       alt="App screen 04"
+            //       style={{ maxWidth: "84.33%" }}
+            //     />
+            //     <img
+            //       className="cey85 cvjv9 czjaw cmhb9 cb1y1"
+            //       src="https://preview.cruip.com/appy/images/iphone-mockup.png"
+            //       width="344"
+            //       height="674"
+            //       alt="iPhone mockup"
+            //       aria-hidden="true"
+            //     />
+            //   </div>
+            // </div> */}
           </div>
         </div>
       </div>
