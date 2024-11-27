@@ -1,0 +1,22 @@
+[
+    {
+        "id" : "1",
+        "title" : "Products",
+        "listItem" : ["Drag And Drop", "Visual Studio X", "Easy Content"]
+    },
+    {
+        "id" : "2",
+        "title" : "Resources",
+        "listItem" : ["Industries and tools", "Use cases", "Blog", "Online events", "Nostrud exercitation"]
+    },
+    {
+        "id" : "3",
+        "title" : "Company",
+        "listItem" : ["Diversity &amp; inclusion", "About us", "Press", "Customer stories", "Online communities"]
+    },
+    {
+        "id" : "4",
+        "title" : "Support",
+        "listItem" : ["Documentation", "Tutorials &amp; guides", "Webinars", "Open-source"]
+    }
+]
