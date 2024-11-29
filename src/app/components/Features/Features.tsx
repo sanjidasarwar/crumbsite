@@ -3,18 +3,19 @@ import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import items from "../../../../data/featuresData.json";
+import useItemVarient from "@/utils/useItemVarient";
 
-const itemVariants = (delay: number) => ({
-  hidden: { opacity: 0, y: -20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      delay: delay,
-    },
-  },
-});
+// const itemVariants = (delay: number) => ({
+//   hidden: { opacity: 0, y: -20 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.5,
+//       delay: delay,
+//     },
+//   },
+// });
 
 const Features = () => {
   const ref = useRef(null);
@@ -43,7 +44,7 @@ const Features = () => {
                 href="#0"
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"} // Animate based on inView status
-                variants={itemVariants(item.variantDelay)}
+                variants={useItemVarient(item.variantDelay, -20)}
                 custom={item.custom}
               >
                 <svg

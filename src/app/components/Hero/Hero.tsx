@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Play } from "lucide-react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import useItemVarient from "@/utils/useItemVarient";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -29,28 +30,28 @@ const Hero = () => {
     },
   };
 
-  const itemVariants = (delay: number) => ({
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: delay,
-      },
-    },
-  });
-  const itemVariants2 = (delay: number) => ({
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: delay,
-      },
-    },
-  });
+  // const itemVariants = (delay: number) => ({
+  //   hidden: { opacity: 0, y: -20 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       duration: 0.5,
+  //       delay: delay,
+  //     },
+  //   },
+  // });
+  // const itemVariants2 = (delay: number) => ({
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       duration: 0.5,
+  //       delay: delay,
+  //     },
+  //   },
+  // });
 
   const [modalExpanded, setModalExpanded] = useState(false);
 
@@ -71,19 +72,22 @@ const Hero = () => {
               >
                 <motion.h1
                   className="cps50 cbhe1 c21u3 cyb9k c41dw"
-                  variants={itemVariants(0)}
+                  variants={useItemVarient(0, -20)}
                 >
                   Your website, reimagined
                 </motion.h1>
                 <motion.p
                   className="text-gray-600 c0atf czz36"
-                  variants={itemVariants(0.15)}
+                  variants={useItemVarient(0.15, -20)}
                 >
                   Our landing page template works on all devices, so you only
                   have to set it up once, and get beautiful results forever.
                 </motion.p>
 
-                <motion.form className="c2bi2" variants={itemVariants(0.3)}>
+                <motion.form
+                  className="c2bi2"
+                  variants={useItemVarient(0.3, 20)}
+                >
                   <div className="cw3my cd663 cks70 c2k38 c54sb c5a8a cmhb9 cnc7y">
                     <input
                       type="tel"
@@ -103,7 +107,7 @@ const Hero = () => {
 
                 <motion.ul
                   className="text-gray-600 c0atf csd7z cd663 c2k38 cmhb9 c6xwf c2bi2"
-                  variants={itemVariants(0.45)}
+                  variants={useItemVarient(0.45, -20)}
                 >
                   {[
                     "Lorem ipsum is placeholder text commonly.",
@@ -126,7 +130,7 @@ const Hero = () => {
 
               <motion.div
                 className="cw9gd c8udt cob0z c5ymx"
-                variants={itemVariants2(0.45)}
+                variants={useItemVarient(0.45, 20)}
                 initial="hidden"
                 animate={controls}
               >

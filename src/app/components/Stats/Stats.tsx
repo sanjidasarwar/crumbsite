@@ -4,6 +4,7 @@ import React from "react";
 import { Package, Droplet, Rocket } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import useItemVarient from "@/utils/useItemVarient";
 
 const Stats = () => {
   const controls = useAnimation();
@@ -28,16 +29,16 @@ const Stats = () => {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
+  // const itemVariants = {
+  //   hidden: { opacity: 0, y: -20 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       duration: 0.5,
+  //     },
+  //   },
+  // };
 
   const statsData = [
     { value: "2.4M", description: "Days turn around" },
@@ -66,7 +67,7 @@ const Stats = () => {
               <motion.div
                 key={index}
                 className="cj3dx ch76r c6zr7 cwpmf co95y"
-                variants={itemVariants}
+                variants={useItemVarient(0.5, -20)}
               >
                 <div className="cps50 ckyqm c21u3 cnolr ccipq">
                   {stat.value}
