@@ -2,9 +2,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import { X, MenuIcon } from "lucide-react";
-import Navigation from "./_components/mobile-menu";
+import Navigation from "./MobileMenu";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import navMenu from "../../../../data/headerData.json";
 
 const Header: React.FC = () => {
   // Use state to handle dropdown open/close
@@ -96,75 +97,57 @@ const Header: React.FC = () => {
           <nav className="ci5ce cqxxm cfrwd">
             {/* Desktop menu links */}
             <ul className="cxdxt cf4hw cxu0t cnc7y c2h4q">
-              <li>
-                <Link
-                  className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
-                  href="/about"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
-                  href="/blog"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
-                  href="/testimonials"
-                >
-                  Testimonials
-                </Link>
-              </li>
-              {/* 1st level: hover */}
-              <li
-                className="czjaw"
-                onMouseEnter={() => setOpen(true)}
-                onMouseLeave={() => setOpen(false)}
-              >
-                <a
-                  className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
-                  href="#0"
-                  aria-haspopup="true"
-                  aria-expanded={open}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Resources
-                  <svg
-                    className="cx9o7 cn4vl c4u31 c2npy cqc4s c39kt cwc3u"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
+              {navMenu.map((item) =>
+                item.submenu ? (
+                  <li
+                    className="czjaw"
+                    onMouseEnter={() => setOpen(true)}
+                    onMouseLeave={() => setOpen(false)}
+                    key={item.id}
                   >
-                    <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z"></path>
-                  </svg>
-                </a>
-                {/* 2nd level: hover */}
-                <ul
-                  className="cj3dx cltap cvbap cgk3d cif5c c6zr7 ceg5n cp8ye c3x8w cvvwb ci4w1"
-                  style={{ display: open ? "block" : "none" }}
-                >
-                  <li>
+                    <a
+                      className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
+                      href="#0"
+                      aria-haspopup="true"
+                      aria-expanded={open}
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      {item.title}
+                      <svg
+                        className="cx9o7 cn4vl c4u31 c2npy cqc4s c39kt cwc3u"
+                        viewBox="0 0 12 12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a 1 1 0 10-1.414-1.414z"></path>
+                      </svg>
+                    </a>
+                    <ul
+                      className="cj3dx cltap cvbap cgk3d cif5c c6zr7 ceg5n cp8ye c3x8w cvvwb ci4w1"
+                      style={{ display: open ? "block" : "none" }}
+                    >
+                      {item.submenu.map((subItem) => (
+                        <li key={subItem.id}>
+                          <Link
+                            className="text-gray-600 cti8h cce98 c0atf c8qwg ceng1 cnc7y c1plj ci4w1"
+                            href={subItem.href}
+                          >
+                            {subItem.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={item.id}>
                     <Link
                       className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
-                      href="/help"
+                      href={item.href}
                     >
-                      Help center
+                      {item.title}
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      className="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1"
-                      href="/404"
-                    >
-                      404
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+                )
+              )}
             </ul>
 
             {/* Desktop lights switch */}

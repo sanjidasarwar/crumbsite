@@ -1,0 +1,12 @@
+[
+    {"id":1, "title": "About", "href": "/about" },
+    {"id":2, "title": "Blog", "href": "/blog" },
+    {"id":3, "title": "Testimonials", "href": "/testimonials" },
+    {"id":4,
+      "title": "Resources",
+      "submenu": [
+        {"id" :"sub1",  "title": "Help Center", "href": "/help" },
+        {"id" : "sub2", "title": "404", "href": "/404" }
+      ]
+    }
+  ]
