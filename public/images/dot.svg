@@ -1,0 +1,49 @@
+<svg
+            className="cey85 ck61j cnid1 cyc1q cgdju cs90m cn8c1 cgk3d cfrwd cvow7 codcr"
+            aria-hidden="true"
+            width="854"
+            height="509"
+            viewBox="0 0 854 509"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <radialGradient
+                cx="50%"
+                cy="50%"
+                fx="50%"
+                fy="50%"
+                r="39.386%"
+                id="iphonesill__a"
+              >
+                <stop stopColor="#667EEA" offset="0%"></stop>
+                <stop stopColor="#667EEA" stopOpacity="0" offset="100%"></stop>
+              </radialGradient>
+              <radialGradient
+                cx="50%"
+                cy="50%"
+                fx="50%"
+                fy="50%"
+                r="39.386%"
+                id="iphonesill__b"
+              >
+                <stop stopColor="#9F7AEA" offset="0%"></stop>
+                <stop stopColor="#9F7AEA" stopOpacity="0" offset="100%"></stop>
+              </radialGradient>
+            </defs>
+            <g transform="translate(-64 -64)" fill="none" fillRule="evenodd">
+              <circle
+                fillOpacity=".64"
+                fill="url(#iphonesill__a)"
+                cx="300"
+                cy="300"
+                r="300"
+              ></circle>
+              <circle
+                fillOpacity=".72"
+                fill="url(#iphonesill__b)"
+                cx="729"
+                cy="384"
+                r="240"
+              ></circle>
+            </g>
+          </svg>

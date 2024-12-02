@@ -1,6 +1,7 @@
 import React from "react";
+import data from "../../../../data/testimonialsData.json";
 
-const Testimonials = ({ data }) => {
+const Testimonials = () => {
   return (
     <section id="testimonials" className="">
       <div className="czd2q c92f3 cmhb9 c1plj">

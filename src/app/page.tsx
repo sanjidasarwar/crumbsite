@@ -11,8 +11,6 @@ import Features from "./components/Features/Features";
 import Cta from "./components/Cta/Cta";
 
 import Footer from "./components/Footer/Footer";
-
-import testimonialsData from "../../data/data";
 import Products from "./components/Products/Products";
 
 export default function Home() {
@@ -28,7 +26,7 @@ export default function Home() {
           <Tabs />
           <Process />
           <PricingTables />
-          <Testimonials data={testimonialsData} />
+          <Testimonials />
           <Features />
           <Cta />
         </div>

@@ -2,24 +2,13 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import pricingTableData from "../../../../data/pricingTableData.json";
+import features from "../../../../data/pricingTableFeatureData.json";
 
 const PricingTables = () => {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
-  console.log(inView);
-
-  // Define animation variants
-  // const variants = {
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: (i: any) => ({
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: { delay: i * 0.5 }, // Staggered appearance
-  //   }),
-  // };
-
-  // Set up Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,14 +57,11 @@ const PricingTables = () => {
             ref={ref}
           >
             {/* Pricing tables with animations */}
-            {[0, 1, 2].map((i) => (
+
+            {pricingTableData.map((item, i) => (
               <motion.div
-                key={i}
-                className={
-                  i === 0
-                    ? "c01sm co2a3 cj3dx c54sb cxgs4 c6zr7 c1zcx cszwl cnc7y cdt9h"
-                    : "cj3dx c54sb c6zr7 c1zcx cszwl cnc7y cdt9h"
-                }
+                key={item.id}
+                className="cj3dx c54sb c6zr7 c1zcx cszwl cnc7y cdt9h"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={{
@@ -92,25 +78,23 @@ const PricingTables = () => {
               >
                 <div className="cyb9k c2h4q cdo31">
                   <div className="ctiy6 cxdxt ccipq cnc7y">
-                    <div className="cps50 cu5hn czz36">
-                      {["Yearly", "Monthly", "Lifetime"][i]}
+                    <div className="cps50 cu5hn czz36 capitalize">
+                      {item["pricing-time"]}
                     </div>
-                    {i === 0 && (
+                    {item.discount && (
                       <div className="cidpy cv8tj ckzxk c5ccc cpz4m czak8 ca2ew cf4hw cqmyn c5mw1 cy8r3">
-                        -40%
+                        {item.discount}
                       </div>
                     )}
                   </div>
                   <div className="cps50 cr2yz czak8 csrqa">
                     <span className="text-gray-600 c0atf cadh6">$</span>
-                    <span className="cm36t">{[27, 47, 127][i]}</span>
+                    <span className="cm36t">{item.bill}</span>
                     <span className="c0atf cp09e cf4hw">
-                      {i === 2 ? "/one-time" : "/billed yearly"}
+                      /{item["bill-type"]}
                     </span>
                   </div>
-                  <div className="c0atf cp09e">
-                    — Lorem ipsum dolor amet sit consect adipiscing.
-                  </div>
+                  <div className="c0atf cp09e">{item.details}</div>
                 </div>
                 <div className="c67z9">
                   <a
@@ -119,7 +103,7 @@ const PricingTables = () => {
                         ? "bg-teal-500 cvy08 c9xc1 cs8sl"
                         : "bg-purple-500 csdws cklyl cv8tj ci7tf c9xc1 cs8sl"
                     } `}
-                    href="#0"
+                    href={item.href}
                   >
                     Go Premium
                   </a>
@@ -146,17 +130,8 @@ const PricingTables = () => {
                 All plans include:
               </div>
               <ul className="cn4vl c6xwf c2h4q">
-                {[
-                  "Unlimited domains",
-                  "Unlimited web pages",
-                  "Conversion analytics",
-                  "A/B testing",
-                  "Exclusive channels",
-                  "Free resources",
-                  "Landing page builder",
-                  "Smart forms and reports",
-                ].map((feature) => (
-                  <li key={feature} className="cxdxt csrqa cnc7y">
+                {features.map((feature) => (
+                  <li key={feature.id} className="cxdxt csrqa cnc7y">
                     <svg
                       className="text-teal-500 c4u31 c2npy cfc20 c39kt cwc3u"
                       viewBox="0 0 12 12"
@@ -164,7 +139,7 @@ const PricingTables = () => {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
                     </svg>
-                    <span>{feature}</span>
+                    <span>{feature.title}</span>
                   </li>
                 ))}
               </ul>

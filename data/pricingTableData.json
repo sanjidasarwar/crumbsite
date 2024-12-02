@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "pricing-time" : "yearly",
+        "bill" : 27,
+        "bill-type": "billed yearly",
+        "details" : "Lorem ipsum dolor amet sit consect adipiscing.",
+        "href" : "#0",
+        "discount" : "40%"
+    },
+    {
+        "id": 2,
+        "pricing-time" : "monthly",
+        "bill" : 47,
+        "bill-type": "billed monthly",
+        "details" : "Lorem ipsum dolor amet sit consect adipiscing.",
+        "href" : "#0"
+    },
+    {
+        "id": 3,
+        "pricing-time" : "Lifetime",
+        "bill" : 127,
+        "bill-type": "one-time",
+        "details" : "Lorem ipsum dolor amet sit consect adipiscing.",
+        "href" : "#0"
+    }
+]

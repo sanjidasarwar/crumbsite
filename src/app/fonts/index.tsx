@@ -1,8 +1,6 @@
-import local from 'next/font/local';
+import local from "next/font/local";
 
-/*
 export const formular = local({
-  src: [{ path: './Formular.ttf'}],
-  display: 'swap'
-})
-*/
+  src: [{ path: "./Formular.ttf" }],
+  display: "swap",
+});

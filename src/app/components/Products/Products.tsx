@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import items from "../../../../data/items.json";
+import items from "../../../../data/productData.json";
 import Carousel from "../Carousel/Carousel";
 
 const Products = () => {
