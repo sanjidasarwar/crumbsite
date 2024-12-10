@@ -6,6 +6,7 @@ import { Play } from "lucide-react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import useItemVarient from "@/utils/useItemVarient";
+import headerListData from "../../../../data/headerListData.json";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -109,12 +110,8 @@ const Hero = () => {
                   className="text-gray-600 c0atf csd7z cd663 c2k38 cmhb9 c6xwf c2bi2"
                   variants={useItemVarient(0.45, -20)}
                 >
-                  {[
-                    "Lorem ipsum is placeholder text commonly.",
-                    "Excepteur sint occaecat cupidatat.",
-                    "Lorem ipsum is placeholder text commonly.",
-                  ].map((text, index) => (
-                    <motion.li key={index} className="cxdxt csrqa cnc7y">
+                  {headerListData.map((list) => (
+                    <motion.li key={list.id} className="cxdxt csrqa cnc7y">
                       <svg
                         className="text-teal-400 c4u31 c2npy cui34 c39kt cwc3u"
                         viewBox="0 0 12 12"
@@ -122,7 +119,7 @@ const Hero = () => {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"></path>
                       </svg>
-                      <span>{text}</span>
+                      <span>{list.text}</span>
                     </motion.li>
                   ))}
                 </motion.ul>
