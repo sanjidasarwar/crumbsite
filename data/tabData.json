@@ -1,0 +1,111 @@
+{
+    "buttons" : [
+        {
+            "id" : "1",
+            "button-title" :"Getting Started",
+            "button-icon" : ""
+        },
+        {
+            "id" : "2",
+            "button-title" :"Collection list",
+            "button-icon" : ""
+        },
+        {
+            "id" : "3",
+            "button-title" :"Element Hierarchy",
+            "button-icon" : ""
+        },
+        {
+            "id" : "4",
+            "button-title" :"Styling Basics",
+            "button-icon" : ""
+        },
+        {
+            "id" : "5",
+            "button-title" :"Image Field",
+            "button-icon" : ""
+        }
+    ],
+    "tabpanes" : [
+        {
+            "id" :1,
+            "img" : "",
+            "title" : "Using index pages",
+            "time" : "2",
+            "href": "#0",
+            "category": "1"
+        },
+        {
+            "id" :2,
+            "img" : "",
+            "title" : "Working with content",
+            "time" : "4",
+            "href": "#0",
+            "category": ["1", "2"]
+        },
+        {
+            "id" :3,
+            "img" : "",
+            "title" : "Using cover pages",
+            "time" : "7",
+            "href": "#0",
+            "category": ["1", "3"]
+        },
+        {
+            "id" :4,
+            "img" : "",
+            "title" : "Intro to the style model",
+            "time" : "9",
+            "href": "#0",
+            "category": ["1", "4"]
+        },
+        {
+            "id" :5,
+            "img" : "",
+            "title" : "Exploring collections",
+            "time" : "12",
+            "href": "#0",
+            "category": ["2", "5"]
+        },
+        {
+            "id" :6,
+            "img" : "",
+            "title" : "Understand hierarchy",
+            "time" : "3",
+            "href": "#0",
+            "category": ["2", "3"]
+        },
+        {
+            "id" :7,
+            "img" : "",
+            "title" : "Customisations",
+            "time" : "11",
+            "href": "#0",
+            "category": ["2", "4"]
+        },
+        {
+            "id" :8,
+            "img" : "",
+            "title" : "Image galleries",
+            "time" : "6",
+            "href": "#0",
+            "category": ["3", "5"]
+        },
+        {
+            "id" :9,
+            "img" : "",
+            "title" : " Sorting images",
+            "time" : "4",
+            "href": "#0",
+            "category": ["5"]
+        },
+        {
+            "id" :10,
+            "img" : "",
+            "title" : "Filters",
+            "time" : "9",
+            "href": "#0",
+            "category": ["5"]
+        }
+    ]
+}
