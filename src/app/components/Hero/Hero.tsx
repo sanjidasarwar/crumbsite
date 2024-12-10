@@ -21,6 +21,28 @@ const Hero = () => {
     }
   }, [controls, inView]);
 
+  // Controls for the form
+  const formControls = useAnimation();
+  const [formRef, formInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Adjust based on when the animation should trigger
+  });
+
+  // Controls for the ul
+  const ulControls = useAnimation();
+  const [ulRef, ulInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (formInView) formControls.start("visible");
+  }, [formInView, formControls]);
+
+  useEffect(() => {
+    if (ulInView) ulControls.start("visible");
+  }, [ulInView, ulControls]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,28 +53,28 @@ const Hero = () => {
     },
   };
 
-  // const itemVariants = (delay: number) => ({
-  //   hidden: { opacity: 0, y: -20 },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.5,
-  //       delay: delay,
-  //     },
-  //   },
-  // });
-  // const itemVariants2 = (delay: number) => ({
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.5,
-  //       delay: delay,
-  //     },
-  //   },
-  // });
+  const itemVariants = (delay: number) => ({
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: delay,
+      },
+    },
+  });
+  const itemVariants2 = (delay: number) => ({
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: delay,
+      },
+    },
+  });
 
   const [modalExpanded, setModalExpanded] = useState(false);
 
@@ -88,6 +110,9 @@ const Hero = () => {
                 <motion.form
                   className="c2bi2"
                   variants={useItemVarient(0.3, 20)}
+                  initial="hidden"
+                  animate={formControls}
+                  ref={formRef}
                 >
                   <div className="cw3my cd663 cks70 c2k38 c54sb c5a8a cmhb9 cnc7y">
                     <input
@@ -109,6 +134,9 @@ const Hero = () => {
                 <motion.ul
                   className="text-gray-600 c0atf csd7z cd663 c2k38 cmhb9 c6xwf c2bi2"
                   variants={useItemVarient(0.45, -20)}
+                  initial="hidden"
+                  animate={ulControls}
+                  ref={ulRef}
                 >
                   {headerListData.map((list) => (
                     <motion.li key={list.id} className="cxdxt csrqa cnc7y">

@@ -38,12 +38,10 @@ const Stats = () => {
 
   return (
     <section id="stats" ref={ref} className="czjaw">
-      {/* Background gradient (light version only) */}
       <div
         className="cey85 clgvu chf91 cdy81 cgk3d c35ck chb9f c2s69 cp8ye c02j9 c4shy"
         aria-hidden="true"
       ></div>
-      {/* End background gradient (light version only) */}
       <div className="czd2q czjaw c92f3 cmhb9 c1plj">
         <div className="cdoe6 ccem0">
           <motion.div
@@ -56,7 +54,7 @@ const Stats = () => {
               <motion.div
                 key={index}
                 className="cj3dx ch76r c6zr7 cwpmf co95y"
-                variants={useItemVarient(0.5, -20)}
+                variants={useItemVarient(index * 0.1, -20)}
               >
                 <div className="cps50 ckyqm c21u3 cnolr ccipq">
                   {stat.value}
